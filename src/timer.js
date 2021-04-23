@@ -1,4 +1,5 @@
 'use strict';
+import { formatError } from './common.js';
 
 export function loadTimer() {
     const time = document.getElementById("time");
@@ -19,7 +20,7 @@ export function loadTimer() {
             } else {
                 clearInterval(timerId);
                 alert('Время закончилось!');
-                output.innerText = `Время закончилось!`;
+                output.innerHTML = formatError('Время закончилось!');
             }
         }, 1000)
     }
