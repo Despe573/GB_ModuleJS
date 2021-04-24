@@ -1,4 +1,6 @@
 'use strict';
+
+import './howler.js';
 import { formatError } from './common.js';
 
 export function loadTimer() {
@@ -7,39 +9,40 @@ export function loadTimer() {
     const pause = document.getElementById("pause");
     const stop = document.getElementById("stop");
     const output = document.getElementById("output");
-    let timerId;
+    let intervalID;
 
     time.addEventListener("input", function () {
-        output.innerText = `Задано время: ${time.value}`;
+        output.innerText = `Отсчет начнется с: ${time.value}`;
     }, false);
 
-    function starTimer() {
-        let timerId = setInterval(function () {
+    function startTimer() {
+        let intervalID = setInterval(function () {
             if (time.valueAsNumber > 0) {
                 time.valueAsNumber = time.valueAsNumber - 1000;
             } else {
-                clearInterval(timerId);
-                alert('Время закончилось!');
+                clearInterval(intervalID);
+                let sound = new Howl({
+                    src: ['./audio/timerbell.mp3']
+                });
+                sound.play();
                 output.innerHTML = formatError('Время закончилось!');
             }
         }, 1000)
     }
 
     function pauseTimer() {
-        clearInterval(timerId);
+        clearInterval(intervalID);
     }
 
     function stopTimer() {
-        clearInterval(timerId);
+        clearInterval(intervalID);
         time.valueAsNumber = 0;
-        output.innerText = `Задано время: ${time.value}`;
+        output.innerText = `Отсчет начнется с: ${time.value}`;
     }
 
 
-    start.addEventListener("click", starTimer);
-
+    start.addEventListener("click", startTimer);
     pause.addEventListener("click", pauseTimer);
-
     stop.addEventListener("click", stopTimer);
 
 }

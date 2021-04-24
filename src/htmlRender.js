@@ -39,12 +39,14 @@ export function htmlRender(nameScript) {
         case 'timer':
             wrapper.innerHTML =
                 `<h3>Таймер</h3>
+                <strong id="output">Отсчет начнется с: 00:00:00</strong>
+                <br>
+                <br>
                 <label>
                     <strong>Задайте время:</strong>
                     <input id="time" type="time" step="1" value="00:00:00" />
                 </label>
                 <br>
-                <div id="output">Задано время: 00:00:00</div>
                 <br>
                 <button id="start">Старт</button>
                 <button id="pause">Пауза</button>
