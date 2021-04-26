@@ -31,6 +31,7 @@ export function htmlRender(nameScript) {
                     <strong>Вторая дата:</strong>
                     <input type="date" name="secondDate" />
                 </label>
+                <br>
                 <button type="submit">Расчитать промежуток</button>
                 <p id="datecalc_result"></p>
                 </form >`;
@@ -39,13 +40,13 @@ export function htmlRender(nameScript) {
         case 'timer':
             wrapper.innerHTML =
                 `<h3>Таймер</h3>
-                <strong id="output">Отсчет начнется с: 00:00:00</strong>
-                <br>
-                <br>
                 <label>
-                    <strong>Задайте время:</strong>
-                    <input id="time" type="time" step="1" value="00:00:00" />
+                    <strong id="text">Задайте время:</strong>
+                    <input id="time" type="time" step="1" value="00:00:00" stile="font-size: x-large;"/>
                 </label>
+                <br>
+                <br>
+                <strong id="output">Отсчет начнется с: 00:00:00</strong>
                 <br>
                 <br>
                 <button id="start">Старт</button>
@@ -65,6 +66,7 @@ export function htmlRender(nameScript) {
                     <strong>Вторая дата:</strong>
                     <input type="date" name="secondDate" />
                 </label>
+                <br>
                 <button type="submit">Расчитать промежуток</button>
                 <p id="datecalc_result"></p>
                 </form >`;
