@@ -1,0 +1,33 @@
+{
+  "name": "gb_modulejs-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "",
+    "build": "",
+    "dev": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Despe573/GB_ModuleJS.git"
+  },
+  "author": "Ivan Borozinetc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Despe573/GB_ModuleJS/issues"
+  },
+  "homepage": "https://github.com/Despe573/GB_ModuleJS#readme",
+  "devDependencies": {
+    "css-loader": "^5.2.4",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.36.1",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "howler": "^2.2.1",
+    "luxon": "^1.26.0"
+  }
+}
