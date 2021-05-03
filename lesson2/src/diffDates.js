@@ -1,6 +1,6 @@
 'use strict';
 
-import { DateTime } from './luxon.js';
+import { DateTime } from 'luxon';
 /***
  * Функция вычисляет разницу между двумя датами. Для вычисления используется функию DateTime библиотеки Luxon.
  * @param {String} firstDate - Первая дата.

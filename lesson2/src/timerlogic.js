@@ -1,17 +1,19 @@
 'use strict';
 
-import './howler.js';
+import { Howl, Howler } from 'howler';
 import { formatError } from './common.js';
-import './timer.js'
+import './timer.js';
+import timerBell from './audio/timerbell.mp3';
+
+const sound = new Howl({
+    src: [timerBell]
+});
 
 function timerLogic() {
     if (time.valueAsNumber > 0) {
         time.valueAsNumber = time.valueAsNumber - 1000;
     } else {
         clearInterval(timerId);
-        let sound = new Howl({
-            src: ['./src/audio/timerbell.mp3']
-        });
         sound.play();
         output.innerHTML = formatError('Время закончилось!');
         text.style.display = "block";
